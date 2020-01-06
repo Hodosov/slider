@@ -31,11 +31,23 @@
  			var hours = d.getHours();
  			var mins = d.getMinutes();
  			var sec = d.getSeconds();
- 			var rez = hours +":"+ mins +":"+ sec ;
+ 			var rez = padLeft(hours) +":"+ padLeft(mins) +":"+ padLeft(sec) ;
  			var el = document.getElementById("test");
  			el.textContent = "Текущее время: " + rez;
+
+
  		}
  		setInterval(printTime, 1000);
+
+ 		function padLeft(number){
+ 			var str = number.toString();
+ 			if (str.length === 1){
+ 				str = "0" + str;
+ 			}
+ 			return str;	
+ 			
+ 		}
+
  		</script>
 
  		<div align="center">
