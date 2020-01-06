@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> учимся</title>
+</head>
+<body bgcolor="03091991">
+	<p align="center">
+ <input id="car" type="text" list="colorrs" weidth="300" placeholder="Выберите цвет">
+ 	<datalist id="colorrs">
+ 		<option value="красный">
+ 		<option value="синий">
+ 		<option value="зеленый">
+ 	</datalist>
+
+</p>
+<p align="center">
+		<audio controls autoplay loop  align="center">
+ 			<source src="verve.mp3">
+ 		</audio>
+ 	</p>
+ 	<p align="center">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/j9RIhGjmgc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 		</p>
+ 	<script>
+ 		var n = prompt("введите число" , "");
+ 		var answer = Math.sqrt(n);
+ 		alert("Квадратный корень из " + n + " равен " + answer + " !! ");
+ 	</script>
+
+		<p id="test" align="center"> Текущее время</p>
+	
+ 	<script>
+ 		function printTime(){
+ 			var d = new Date();
+ 			var hours = d.getHours();
+ 			var mins = d.getMinutes();
+ 			var sec = d.getSeconds();
+ 			var rez = hours +":"+ mins +":"+ sec ;
+ 			var el = document.getElementById("test");
+ 			el.textContent = "Текущее время: " + rez;
+ 		}
+ 		setInterval(printTime, 1000);
+ 		</script>
+
+ 		<div align="center">
+ 			<button onclick="prev()"> назад</button>
+ 			<img id="slider" src="q.jpg" width="400px" height="100%">
+ 			<button onclick="next()">вперед</button>
+ 		</div>
+ 		<script>
+ 			var imges = ["q.jpg", "w.jpg", "e.jpg", "r.jpg", "t.jpg"];
+ 			var num = 0;
+
+
+ 			function next(){
+ 				var slider = document.getElementById("slider");
+ 				num ++;
+ 				if(num >= imges.length){
+ 				num = 0;
+ 			}
+ 			slider.src = imges[num];	
+ 		}
+
+ 			function prev(){
+ 				var slider = document.getElementById("slider")
+ 				num--;
+ 				if(num < 0) {
+ 					num = imges.length - 1;
+ 				}
+ 				slider.src = imges[num];
+ 		}
+ 		</script>
+</body>
+</html>
